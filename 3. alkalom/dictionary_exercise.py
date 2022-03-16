@@ -1,5 +1,8 @@
 # dictionary: kulcs - érték párokat tartalmazó objektum
 
+from hashlib import sha3_224
+
+
 my_dict = {
     "kulcs": "érték"
 }
@@ -168,7 +171,46 @@ my_dict = {
 
 }
 
+# debug hibaüzenet nem jelenik meg futási időben
+# set  - duplikáció mentes, iterálható objektum
+
+my_set = {1, 2, 3, 4}
+
+my_set2 = {1, 2, 3}
+
+difference = my_set.difference(my_set2)
+
+is_sub_set = my_set2.issubset(my_set)
+
+my_list = [1,2,2,2,2,2,3,4,5,6,7,7,8,8,8]
+
+dedup_list = list(set(my_list))
+
+print(dedup_list)
+
+
+# ciklusok és elágazások
+
+# indentáció
+
+# elágazások
+
+# C típusú nyelvekben: pl.
+# if (logikai vizsgálat) {
+
+#     SDSDgdgSDDgDG;
+#     DgDG
+# }
+# else {
+
+# }
+
+
+# python if else
+
+# if logikai vizsgálat:
+#     utasítások
+#     utasításha3_224
 
 
 
-print(my_dict)
