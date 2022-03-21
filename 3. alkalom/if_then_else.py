@@ -56,3 +56,4 @@ print("következő utasítás")
 # ciklusok
 # listák ás dictionaryk bejárása ciklusokkal
 # függvények
+# comphension műveletek
