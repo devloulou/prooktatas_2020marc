@@ -10,5 +10,6 @@ with open(file_path, "r") as f:
 
 #print(data[0:1000])
 
+# file kiiras
 with open('pelda.txt', 'w') as kiscica:
     kiscica.write('Ez egy teszt sor')

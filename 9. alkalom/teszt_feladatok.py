@@ -12,5 +12,5 @@ my_list = [0,1,1,2,3,5]
 # 2. feladat:
 # Írjatok egy olyan programot, amely
 # a 4 matematikai alapműveletet elvégzi
-# a programot úgy írjátok meg, hogy 3 paraméltere legyen: 2 szám és egy matematikai jel
-
+# a programot úgy írjátok meg, hogy 3 paramétere legyen: 2 szám és egy matematikai jel
+# írhattok olyan változatot is, ami output-ról kéri be a matematikai műveletet
