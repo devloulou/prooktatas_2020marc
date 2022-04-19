@@ -2,7 +2,7 @@
 adattal kapcsolatos feladatok: data engineering
                                devops
                                big data
-                               ML-DL
+                               ML-DL (machine learning - deep learning)
                                BI feladatok
                                data mining
 
