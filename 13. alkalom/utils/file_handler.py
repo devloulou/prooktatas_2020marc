@@ -15,7 +15,10 @@ def get_book_list():
         raise FileNotFoundError("A megadott elérési útvonal nem létezik")
         
     for item in os.listdir(folder_path):
-       books.append(folder_path + '\\' + item)
+        #if item.endswith('.txt'):
+        #if '.txt' in item:
+        if item[-4:] == '.txt':
+            books.append(folder_path + '\\' + item)
 
     return books
 
@@ -39,9 +42,13 @@ def write_json(file_location, json_data):
 
     return True
 
+def create_csv():
+    pass
 
 if __name__ == "__main__":
     test = get_book_list()
+    print(test)
+    exit()
     
     # data = get_data_from_txt(test[0])
 
