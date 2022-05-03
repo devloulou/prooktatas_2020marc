@@ -4,6 +4,7 @@
 
 # @dataclass
 
+from enum import auto
 import json
 
 
@@ -70,16 +71,29 @@ class Salon:
 
         return item
     
-    def transaction_handling(self, price):
-        if price > 0:
-            self.base_money += price
+    def transaction_handling(self, item):
+        if item.price > 0:
+            self.base_money += item.price
         else:
-            self.base_money -= price
+
+            if 0 > self.base_money - (item.price*-1):
+                raise Exception(f"Nincs elengendő pénzed arra, hogy megvedd az {item.type}")
+
+            self.base_money -= (item.price*-1)
+            
+            if item.type == "car":
+                self.catalogue.cars[item.name].price *= -1
+            else:
+                self.catalogue.motors[item.name].price *= -1
        
 
 volvo = Car(name="Volvo", price=1250000)
 bmw = Car(name="BMW", price=5000000)
 harley = Motor(name="Harley Davidson", price=10000000)
+
+royce = Car(name="Royce", price=100000000)
+
+opel = Car(name="Opel", price=450000)
 
 auto_salon = Salon()
 
@@ -87,6 +101,27 @@ auto_salon.upload_catalogue(bmw)
 auto_salon.upload_catalogue(volvo)
 auto_salon.upload_catalogue(harley)
 
+temp = auto_salon.delete_from_catalogue(volvo)
+
+auto_salon.transaction_handling(temp)
+
+print(auto_salon.base_money)
+
+# vétel: vettünk egy opelt.
+auto_salon.upload_catalogue(opel)
+opel.price *= -1
+
+auto_salon.transaction_handling(opel)
+
+royce.price *= -1
+auto_salon.transaction_handling(royce)
+
+print(auto_salon.base_money)
+
 print(auto_salon.catalogue)
 
+exit()
+auto_salon.delete_from_catalogue(harley)
+
+print(auto_salon.catalogue)
 
