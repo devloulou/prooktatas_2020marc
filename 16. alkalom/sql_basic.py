@@ -19,7 +19,7 @@
  * */
 
 
---- Relációs adatbázis - RDBSM - Relational Data Base System Management
+-- Relációs adatbázis - RDBSM - Relational Data Base System Management
 
 -- mi az a reláció: kapcsolat az adat között 
 
@@ -55,6 +55,7 @@ salary bigint,
 position text
 
 );
+
 /* tábla eldobása - törlése*/
 drop table if exists employee;
 
@@ -67,12 +68,62 @@ select * from employee;
 insert into employee (name, age, salary, position)
 values ('Jolán', 65, 100000, 'nyugdijas'); 
 
+/*
+ * insert "commit köteles" utasitás
+ * 
+ * */
+
+/*
+ * lock mechanizmus történhet akkor, amikor adatbázis módositő
+ *utasitást adok ki
+ */
 
 
+/* tranzakció
+ * 
+ * az adatbázis művelet lezárása:
+ * 
+ * commit - OK, sikeres lezárás, a váégrehajtott utasitás megtörténhet úgy, ahogy 
+ * végrehajtottuk
+ * 
+ * rollback - Cancel, vissza vonom lezáratlan adatbázis utasitást
+ */
+
+/*delete - törlés*/
+
+delete from employee;
+
+truncate table employee;
+
+/* update - módositás*/
+
+update employee set name='Gizi', age=70;
+
+/*
+ * webes ökoszitémában az adatbázis
+ * insert, select, update , delete
+ * create, read, update, delete -> CRUD műveletek
+ * */
+
+/* DML - Data Manupulation Language
+ * 
+ * insert 
+ * update 
+ * delete
+ * lock
+ * 
+ * */
+
+/*
+ * DQL - Data Query Language
+ * 
+ * select
+ * */
 
 
-
-
-
-
-
+/*
+ * DCL - Data Control Language
+ * 
+ * Grant
+ * Revoke
+ * */
