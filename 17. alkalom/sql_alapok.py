@@ -19,20 +19,20 @@ values ('József', 50, 1000000, 'igazgató');
 ------------------------------------------------------------------------------
 
 /*alias - adsz egy saját nevet oszlopoknak és tábláknak, amelyekre
- * ezután a alias-al tudsz hivatkozni*/
+* ezután a alias-al tudsz hivatkozni*/
 --sales_cognos_dashboard_data
 /*where feltétel - filtering funkció - szűrési feltételeket itt adod meg
- * 
- * aggregált függvényeket nem lehet where feltételben haszálni
- * */
+* 
+* aggregált függvényeket nem lehet where feltételben haszálni
+* */
 
 select e.* from employee e
 where name = 'Karcsi';
 
 /*in clause - több érték megadását jelenti
- * 
- * not in
- * */
+* 
+* not in
+* */
 select e.* from employee e
 where name in ('Karcsi', 'Pista', 'Jolán');
 
@@ -40,17 +40,17 @@ select e.* from employee e
 where name not in ('Karcsi', 'Pista', 'Jolán');
 
 /*min, max, count, avg, sum függvények
- * aggregált függvények
- * */
+* aggregált függvények
+* */
 select max(age), min(age), count(age), avg(age), sum(age) from employee e;
 
 /*group by - csoportositás*/
 /* order by - rendezés valamilyen mező szerint, csökkenő, növekvő
- * alapértelmezetten csökkenő sorrendet használ
- * 
- * csökkenő: desc
- * növekvő: asc
- * */
+* alapértelmezetten csökkenő sorrendet használ
+* 
+* csökkenő: desc
+* növekvő: asc
+* */
 select e.name, e.age, max(e.age) from employee e
 where 1 = 1
 group by e.name, e.age
@@ -127,27 +127,27 @@ select * from cars;
 
 
 /*kulcsok tipusai:
- * 
- * primary_key - elsődleges kulcs - unique, not null - egyedi és nem lehet null az értéke
- * foreign_key - idegen kulcs, a kulcs egy másik tábla adott mezőjére hivatkozik
- * 			     csak akkor tudsz hivatkozni egy mezőre, ha az primary_key egyben
- * 
- */
+* 
+* primary_key - elsődleges kulcs - unique, not null - egyedi és nem lehet null az értéke
+* foreign_key - idegen kulcs, a kulcs egy másik tábla adott mezőjére hivatkozik
+* 			     csak akkor tudsz hivatkozni egy mezőre, ha az primary_key egyben
+* 
+*/
 
 
 /*
- * táblák összekapcsolása
- * 
- * join utasitás
- * 
- * inner join --
- * left join --
- * rigth join --
- * cross join
- * left outer join
- * right join
- * full outer join
- * */
+* táblák összekapcsolása
+* 
+* join utasitás
+* 
+* inner join --
+* left join --
+* rigth join --
+* cross join
+* left outer join
+* right join
+* full outer join
+* */
 
 
 select c.id, c.type, c2.color, ft.fuel_type  from cars c
