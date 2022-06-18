@@ -9,7 +9,6 @@ my_list = [10, 20, 30, 40, 50, 60, 70]
 
 # 2. feladat:
 # töröljétek ki azt az elemet, ahol nem szerepel író
-# a megoldás során használjatok ciklust és vizsgáljátok meg, hogy létezik e a writer kulcs
 
 my_dict = {
     "books": [

@@ -32,8 +32,9 @@ my_age = 32
 my_name = "Ricsi"
 
 # Ricsi vagyok és 32 éves
+print("print -------------------")
+print("{name:s} vagyok és {age:x} éves".format(name=my_name, age=my_age))
 
-print("{name:s} vagyok és {age} éves".format(name=my_name, age=my_age))
 ################################################################################
 # 3. String interpoláció / f-string
 

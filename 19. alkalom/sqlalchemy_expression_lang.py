@@ -1,6 +1,6 @@
-import datetime
-import random
 import string
+import random
+import datetime
 
 from sqlalchemy import create_engine, inspect
 from sqlalchemy import MetaData, Table, Column, String, Date
@@ -46,5 +46,3 @@ with db.connect() as conn:
     # Business Intelligence - BI - adattárház, data lake, lakehouse
 
     conn.execute(update_statement)
-
-
